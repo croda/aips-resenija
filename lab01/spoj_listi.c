@@ -25,6 +25,8 @@ struct node *mk_link_list(int len)
 	return p;
 }
 
+
+
 void mvNode(struct node **dest, struct node **src)
 {
 	struct node *newNode = *src;
