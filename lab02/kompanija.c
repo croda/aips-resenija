@@ -24,8 +24,15 @@ struct node {
 
 struct node *head;
 
+/* Asserts:
+ *	'ID' is positive;
+ *	'plata' is positive;
+ */
 struct node *newNode(int ID, int plata)
 {
+	assert(ID > 0);
+	assert(plata > 0);
+
 	struct node *new = malloc(sizeof(struct node));
 	new->ID = ID;
 	new->plata = plata;
@@ -34,6 +41,10 @@ struct node *newNode(int ID, int plata)
 
 	return new;
 }
+
+/* Asserts:
+ *	'new' is not NULL;
+ */
 void append(struct node *new)
 {
 	struct node *current = head;
@@ -88,8 +99,12 @@ void delete (struct node *deleted)
 	free(deleted);
 }
 
+/* Asserts:
+ *	'plata' is positive;
+ */
 void removePoor(int plata) // :'(
 {
+	assert(plata > 0);
 	struct node *p = head;
 
 	while (p != NULL) {
